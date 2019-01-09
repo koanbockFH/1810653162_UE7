@@ -19,7 +19,7 @@ public class Aufgabe_2
     }
 
 
-    private static Boolean isNumeric(String s)
+    private static boolean isNumeric(String s)
     {
         try
         {
