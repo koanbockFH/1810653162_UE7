@@ -2,9 +2,14 @@ package at.ac.fhkufstein;
 
 public class UebungException extends Exception
 {
-    @Override
-    public String getMessage()
+
+    public UebungException()
     {
-        return "Das ist meine Fehlermeldung!";
+        super("Das ist meine Fehlermeldung!");
+    }
+
+    public UebungException(String customMessage)
+    {
+        super(customMessage);
     }
 }

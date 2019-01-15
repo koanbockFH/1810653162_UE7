@@ -1,22 +1,24 @@
 package at.ac.fhkufstein;
 
+import java.io.FileReader;
+
 public class Aufgabe_5
 {
-    public static void main(String[] args) throws NumberFormatException
+    public static void main(String[] args)
     {
-        try
-        {
-            throw new NumberFormatException();
-        }
-        catch(NumberFormatException e)
-        {
-            //catched therefore checked Exception
-        }
 
-        int a = 10;
-        int b = 0;
+        /*
+        * checked at Compile time --- NOT RuntimeException
+         */
+        FileReader file = new FileReader("C:\\myFile.dat"); //Comment for Compilation
 
-        int ergebnis = a/b; //Unchecked Exception Arithmetic
+
+        /*
+        * Not checked at Compile Time ----- RuntimeException
+         */
+        String a = null;
+        a.length();
+        int test = 10/0;
 
     }
 }

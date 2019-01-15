@@ -16,15 +16,19 @@ public class Aufgabe_3
         }
         catch(Exception e)
         {
-            System.err.println("EIn Fehler ist aufgetreten\nStackTrace:");
+            System.err.println("Eingabe ist kein Text\nStackTrace:");
             e.printStackTrace();
+            return;
         }
+        System.out.println("OK!");
     }
 
-    private static boolean checkEmail(String s)
+    private static void checkEmail(String s) throws Exception
     {
         Pattern pattern = Pattern.compile( "[\\w|-]+@\\w[\\w|-]*\\.[a-z]{2,3}" );
         Matcher m = pattern.matcher(s);
-        return m.find();
+        if(!m.find()){
+            throw new Exception(); //
+        }
     }
 }
